@@ -1,0 +1,143 @@
+body {
+    background-color: #131212;
+} 
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+@font-face {
+   font-family: Kathondu;
+   src: url(fonts/KathonduExtremeBold-drdXg.otf);
+}
+@font-face {
+    font-family: SevenSegment;
+    src: url(fonts/Seven\ Segment.ttf);
+}
+
+h1 {
+    font-size: 150px;
+}
+
+p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 15px;
+    color: #c8c3c3
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.center {
+    vertical-align: top;
+    width: 54%;
+}
+
+.left {
+    vertical-align: top;
+    width: 23%;   
+}
+
+.right {
+    width: 23%;
+    height: auto;
+}
+
+.main {
+    margin-left: 17%; /* Same as the width of the sidebar */
+    padding: 0px 0px;
+}
+
+/* .sidenav a {
+    padding: 5% 5% 5% 5%;
+    display: block; 
+    align-items: baseline;
+    text-decoration: none;
+    font-size: 800%;
+    color: #818181;
+
+    transform: rotate(270deg);
+    transform-origin: 134% 146%;
+} */
+
+.sidenav a {
+    font-family: Kathondu;
+    font-size: 10vw;
+    line-height: 5vw;
+    color: #c8c3c3;
+    display: block; 
+    align-items: baseline;
+    text-decoration: none;
+    align-self: flex-end;
+    transform: rotate(270deg);
+    transform-origin: 16% 20%;
+    
+}
+
+@media screen and (max-width: 600px) {
+  .sidenav a {
+    font-size: 30px;
+    bottom: 5px;
+  }
+}
+
+.sidenav {
+    display: flex;
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 17%; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #1b1919; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+}
+
+.icon{
+    position: absolute;
+    width: 80%;
+    top: 3%;
+    left: 10%;
+    
+    border-radius: 10%;
+}
+  
+.mainImage{
+    position: static;
+    width: 100%;
+    /* right:0px; */
+    left: 0px;
+}
+
+.footer{
+    position: static;
+    text-align: right;
+    margin: .7%;
+    margin-bottom: 2%;
+}
+
+#date{
+    font-size: 40px;
+    text-align: right; 
+    margin: .8%;
+    font-family: SevenSegment;
+}
+
+.box_info{
+    position: relative;
+    width: 90%;
+    left: 9%;
+    
+    background: #ffc86b;
+}
+
+#box_text{
+    font-size: 15px;
+    color: #131212;
+    padding: 5px;
+    text-align: justify;
+}
