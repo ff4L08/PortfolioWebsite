@@ -9,11 +9,11 @@ body {
 
 @font-face {
    font-family: Kathondu;
-   src: url(fonts/KathonduExtremeBold-drdXg.otf);
+   src: url(../fonts/KathonduExtremeBold-drdXg.otf);
 }
 @font-face {
     font-family: SevenSegment;
-    src: url(fonts/Seven\ Segment.ttf);
+    src: url(../fonts/Seven\ Segment.ttf);
 }
 
 h1 {
@@ -147,11 +147,36 @@ img {
     grid-template-columns: auto auto auto;
     background-color: rgb(62, 62, 62);
     padding: 10px;
-  }
+}
 #gallery > div {
     background-color: #aeaeae;
     border: 0px solid black;
     padding: 10px;
     font-size: 30px;
     text-align: center;
-  }
+}
+
+.buttonChange{
+    background-color: #232222;
+    border: #131212;
+    transition-duration: 1.3s;
+    padding: 20px;
+    margin-top: 1.2%;
+    margin-bottom: 1.2%;
+    width: 50%;
+    height: 20%;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    font-family: Kathondu;
+    color: #dcd7d7;
+    font-size: 3.5vw;
+
+}
+
+.buttonChange:hover {
+    background-color: #888686;
+    color: #232222;
+}
