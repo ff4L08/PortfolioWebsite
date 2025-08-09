@@ -10,7 +10,7 @@ function ReplaceImage() {
     // hides the image
     document.getElementById('mainImage').style.display = 'none';
     //show the grid
-    document.getElementById('gallery').style.display = 'grid';
+    document.getElementById('gallery').style.display = 'flex';
     document.getElementById('ChangeBack').style.display = 'block';
     document.getElementById('ShowGallery').style.display = 'none';
 

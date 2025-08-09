@@ -131,7 +131,7 @@ img {
     position: relative;
     width: 90%;
     left: 9%;
-    
+    padding: .5%;    
     background: #ffc86b;
 }
 
@@ -147,9 +147,12 @@ img {
     grid-template-columns: auto auto auto;
     background-color: rgb(62, 62, 62);
     padding: 10px;
+    padding-bottom: 50px;
+    margin-bottom: 20px;
+    grid-template-columns: 4;
 }
 #gallery > div {
-    background-color: #aeaeae;
+    background-color: #1b1919;
     border: 0px solid black;
     padding: 10px;
     font-size: 30px;
@@ -179,4 +182,8 @@ img {
 .buttonChange:hover {
     background-color: #888686;
     color: #232222;
+}
+
+.gallerycolumn {
+    width: 25%;
 }
