@@ -184,6 +184,10 @@ img {
     color: #232222;
 }
 
-.gallerycolumn {
-    width: 25%;
+.gallerycolumnN {
+    width: 20%;
+}
+
+.gallerycolumnW {
+    width: 30%;
 }
