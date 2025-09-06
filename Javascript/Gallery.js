@@ -31,10 +31,16 @@ var imageNames = ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png",
 // }
 
 function loadImages(imageNames) {
+
+}
+
+
+function PlaceImages(imageNames) {
     
     console.log("start")
 
     imageNames.forEach(element => {
+        
         try{
             const imgElement = document.createElement('img');
 
@@ -42,59 +48,53 @@ function loadImages(imageNames) {
             imgElement.src = imageDir;
             console.log("image directory: " + imageDir)
 
-            //style changes
-            imgElement.style.width = "100%";
+            setTimeout(() => {
+                console.log("Waited 1 second!");
 
-            dimension = SortImagesBasedOnDimension(imgElement)
-            if (dimension == "wide"){
-                Wide = 1
+                dimension = SortImagesBasedOnDimension(imgElement)
 
-                gallerycolumnsWide[indexes[Wide]].appendChild(imgElement);
-                gallerycolumnWideImages[indexes[Wide]].push(element)
+                //style changes
+                imgElement.style.width = "100%";
 
-                UpdateColumnHeight(imgElement, indexes[Wide], 1)
+                if (dimension == "wide"){
+                    Wide = 1
 
-                min = 9999
-                for (let index = 0; index < height[Wide].length; index++) {
-                    const element = height[Wide][index];
-                    if (element < min){
-                        min = element
-                        indexes[Wide] = index
-                        console.log(index)
+                    gallerycolumnsWide[indexes[Wide]].appendChild(imgElement);
+                    gallerycolumnWideImages[indexes[Wide]].push(element)
+
+                    UpdateColumnHeight(imgElement, indexes[Wide], 1)
+
+                    min = 9999
+                    for (let index = 0; index < height[Wide].length; index++) {
+                        const element = height[Wide][index];
+                        if (element < min){
+                            min = element
+                            indexes[Wide] = index
+                        }
                     }
-                }
 
-                // if (indexes[0] == (gallerycolumnsWide.length - 1)){
-                //     indexes[0] = 0
-                // } else {
-                //     indexes[0] += 1
-                // }
-
-            } else if (dimension ==  "narrow"){
-                Narrow = 0
-                
-                gallerycolumnsNarrow[indexes[Narrow]].appendChild(imgElement)
-                gallerycolumnsNarrowImages[indexes[Narrow]].push(element)
-
-                UpdateColumnHeight(imgElement, indexes[Narrow], 0)
-
-                min = 9999
-                for (let index = 0; index < height[Narrow].length; index++) {
-                    const element = height[Narrow][index];
-                    if (element < min){
-                        min = element
-                        indexes[Narrow] = index
-                        console.log(index)
-                    }
-                }
-
-                // if (indexes[1] == (gallerycolumnsNarrow.length - 1)){
+                } else if (dimension ==  "narrow"){
+                    Narrow = 0
                     
-                //     indexes[1] = 0
-                // } else {
-                //     indexes[1] += 1
-                // }
-            }
+                    gallerycolumnsNarrow[indexes[Narrow]].appendChild(imgElement)
+                    gallerycolumnsNarrowImages[indexes[Narrow]].push(element)
+
+                    UpdateColumnHeight(imgElement, indexes[Narrow], 0)
+
+                    min = 9999
+                    for (let index = 0; index < height[Narrow].length; index++) {
+                        const element = height[Narrow][index];
+                        if (element < min){
+                            min = element
+                            indexes[Narrow] = index
+                        }
+                    }
+                }
+
+
+            }, 100);
+
+
 
             
 
@@ -114,10 +114,15 @@ function SortImagesBasedOnDimension(imgElement) {
     if (imgElement.height > imgElement.width) {
         console.log("portrait")
         return "narrow"
-    } else {
+    } else if (imgElement.height < imgElement.width){
         console.log("landscape")
-
         return "wide"
+    } else{
+        console.log("something went wrong")
+        console.log(imgElement.width)
+        console.log(imgElement.heighst)
+
+        return "narrow"
     }
 }
 
@@ -150,7 +155,7 @@ function UpdateColumnHeight(img, index, isImgNarrow) {
     console.log(height)
 }
 
-loadImages(imageNames)
+PlaceImages(imageNames)
 console.log(height)
 
 
