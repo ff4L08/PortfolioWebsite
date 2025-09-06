@@ -45,7 +45,7 @@ function loadImages(imageNames) {
             //style changes
             imgElement.style.width = "100%";
 
-            dimension = SortImagesBasedOnDimension(element)
+            dimension = SortImagesBasedOnDimension(imgElement)
             if (dimension == "wide"){
                 Wide = 1
 
@@ -106,16 +106,16 @@ function loadImages(imageNames) {
         }
     });
 }
-function SortImagesBasedOnDimension(imageName) {
-    const img = new Image();
-    var getimageDir = imagesDir + imageName
-    img.src = getimageDir;
+function SortImagesBasedOnDimension(imgElement) {
+    // const img = new Image();
+    // var getimageDir = imagesDir + imageName
+    // imgElement.src = getimageDir;
 
-    if (img.height > img.width) {
-        console.log("narrow")
+    if (imgElement.height > imgElement.width) {
+        console.log("portrait")
         return "narrow"
     } else {
-        console.log("wide")
+        console.log("landscape")
 
         return "wide"
     }
